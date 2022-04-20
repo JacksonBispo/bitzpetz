@@ -8,6 +8,7 @@ public class BitzpetzApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BitzpetzApplication.class, args);
+		
 	}
 
 }
