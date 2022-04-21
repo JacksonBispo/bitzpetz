@@ -3,8 +3,6 @@ package br.com.bitz.DTO;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import br.com.bitz.domain.Produto;
-
 public class ProdutoDTO {
 
 	private Long id;

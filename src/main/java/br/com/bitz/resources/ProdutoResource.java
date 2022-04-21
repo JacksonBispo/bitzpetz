@@ -1,11 +1,9 @@
 package br.com.bitz.resources;
 
 import java.net.URI;
-import java.net.http.HttpResponse;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -90,10 +88,10 @@ public class ProdutoResource {
 		
 	}
 	
-	@RequestMapping(value="/delete/{id}",method = RequestMethod.GET)
-	public RedirectView delete(@PathVariable Long id,Model mode) throws Exception{
-		produtoService.delete(id);
-		return new RedirectView("/"); 
+	@RequestMapping(value="/delete/{id}",method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable Long id,Model mode) throws Exception{
+			produtoService.delete(id);
+		return ResponseEntity.noContent().build();
 	}
 	
 }

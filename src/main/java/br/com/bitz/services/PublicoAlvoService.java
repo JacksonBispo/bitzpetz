@@ -1,6 +1,7 @@
 package br.com.bitz.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,23 @@ public class PublicoAlvoService {
 		publicoAlvo.setId(objDTO.getId());
 		publicoAlvo.setName(objDTO.getName());
 		return publicoAlvo;
+	}
+
+
+
+	public PublicoAlvo findById(Long id) throws Exception{
+		Optional<PublicoAlvo> publicoAlvo = publicoAlvoRepository.findById(id);
+		return  publicoAlvo.orElseThrow(()->
+				new Exception("objeto nao encontrado ID: "+ id + ",tipo: "+PublicoAlvo.class));
+	}
+	
+	public void update (PublicoAlvo publicoAlvo) throws Exception {
+		PublicoAlvo newObj = findById(publicoAlvo.getId());
+		newObj.setName(publicoAlvo.getName());
+		publicoAlvoRepository.save(newObj);
+	}
+	
+	public void delete(Long id) {
+		publicoAlvoRepository.deleteById(id);
 	}
 }
