@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import br.com.bitz.domain.Produto;
 import br.com.bitz.domain.PublicoAlvo;
 import br.com.bitz.repositories.ProdutoRepository;
-import br.com.bitz.repositories.PublicAlvoRepository;
+import br.com.bitz.repositories.PublicoAlvoRepository;
 
 @SpringBootApplication 
 public class BitzpetzApplication implements  CommandLineRunner{
@@ -20,7 +20,7 @@ public class BitzpetzApplication implements  CommandLineRunner{
 	@Autowired
 	private ProdutoRepository productRepositry;
 	@Autowired
-	private PublicAlvoRepository categoriaRepositry;
+	private PublicoAlvoRepository categoriaRepositry;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BitzpetzApplication.class, args);
@@ -49,13 +49,13 @@ public class BitzpetzApplication implements  CommandLineRunner{
 		produto3.setEan("037830");
 		produto3.setFabricaco(sdf.parse("30/01/2019 09:30"));
 		PublicoAlvo publicoAlvo = new PublicoAlvo();
-		publicoAlvo.setName("Gatos");
+		publicoAlvo.setName("Gato");
 		
 		PublicoAlvo publicoAlvo2 = new PublicoAlvo();
-		publicoAlvo2.setName("cachorros");
+		publicoAlvo2.setName("cachorro");
 		
 		PublicoAlvo publicoAlvo3 = new PublicoAlvo();
-		publicoAlvo3.setName("passaros");
+		publicoAlvo3.setName("passaro");
 		
 		publicoAlvo.setProdutos(Arrays.asList(produto));
 		publicoAlvo2.setProdutos(Arrays.asList(produto2));

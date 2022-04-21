@@ -6,13 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import br.com.bitz.domain.Product;
+import br.com.bitz.domain.Produto;
 
 @Repository
-public interface ProductRepositry extends JpaRepository<Product, Long> {
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	
-	@Query(value = "SELECT p.* FROM PRODUCT P INNER JOIN CATEGORY C ON C.ID = P.CATEGORY_ID   WHERE P.NAME LIKE %?%1" , nativeQuery = true)
-	List<Product> findProductsByCategory(String name);
+	@Query(value = "SELECT * FROM PRODUTO P INNER JOIN PUBLICO_ALVO C ON C.ID = P.PUBLICO_ID   WHERE C.NAME LIKE %?1" , nativeQuery = true)
+	List<Produto> findProductsByCategory(String name);
 	
 
 }

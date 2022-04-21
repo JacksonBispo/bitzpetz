@@ -17,7 +17,7 @@ import javax.persistence.ManyToOne;
  * classe responsavel por definir produtos do petshop
  */
 @Entity
-public class Product  implements Serializable{
+public class Produto  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -30,20 +30,20 @@ public class Product  implements Serializable{
 	
 	private String ean;
 	
-	private Date manufacturing;
+	private Date fabricaco;
 	
 	@ManyToOne
-	@JoinColumn(name = "category_id")
-	private Category category;
+	@JoinColumn(name = "publico_id")
+	private PublicoAlvo publicoAlvo;
 	
 	
 
-	public Category getCategory() {
-		return category;
+	public PublicoAlvo getPublicoAlvo() {
+		return publicoAlvo;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setPublicoAlvo(PublicoAlvo publicoAlvo) {
+		this.publicoAlvo = publicoAlvo;
 	}
 
 	public Long getId() {
@@ -78,14 +78,11 @@ public class Product  implements Serializable{
 		this.ean = ean;
 	}
 
-	public Date getManufacturing() {
-		return manufacturing;
+	public Date getFabricaco() {
+		return fabricaco;
 	}
 
-	public void setManufacturing(Date manufacturing) {
-		this.manufacturing = manufacturing;
+	public void setFabricaco(Date fabricaco) {
+		this.fabricaco = fabricaco;
 	}
-	
-	
-
 }

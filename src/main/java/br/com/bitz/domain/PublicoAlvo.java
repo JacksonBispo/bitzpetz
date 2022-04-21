@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * 
  * @author jackson
@@ -25,7 +27,7 @@ public class PublicoAlvo implements Serializable{
 	private Long id;
 	
 	private String name;
-	
+	@JsonIgnore
 	@OneToMany(mappedBy ="publicoAlvo",cascade = CascadeType.ALL)
 	public List<Produto> produtos = new ArrayList<Produto>();
 	

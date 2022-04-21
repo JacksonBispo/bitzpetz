@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.bitz.domain.PublicoAlvo;
 
 @Repository
-public interface PublicAlvoRepository extends JpaRepository<PublicoAlvo, Long> {
+public interface PublicoAlvoRepository extends JpaRepository<PublicoAlvo, Long> {
 	
 	
 
