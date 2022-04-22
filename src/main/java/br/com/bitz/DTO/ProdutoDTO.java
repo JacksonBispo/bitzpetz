@@ -1,7 +1,6 @@
 package br.com.bitz.DTO;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class ProdutoDTO {
 
@@ -13,7 +12,7 @@ public class ProdutoDTO {
 	
 	private String ean;
 	
-	private Date fabricaco;
+	private String fabricaco;
 	
 	private Long idPublicoAlvo;
 	
@@ -49,11 +48,11 @@ public class ProdutoDTO {
 		this.ean = ean;
 	}
 
-	public Date getFabricaco() {
+	public String getFabricaco() {
 		return fabricaco;
 	}
 
-	public void setFabricaco(Date fabricaco) {
+	public void setFabricaco(String fabricaco) {
 		this.fabricaco = fabricaco;
 	}
 

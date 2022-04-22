@@ -1,7 +1,6 @@
 package br.com.bitz;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,24 +29,23 @@ public class BitzpetzApplication implements  CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy HH:mm");
 		Produto produto = new Produto();
 		produto.setName("Wiskas");
 		produto.setPrice(new BigDecimal(39.99));
 		produto.setEan("037867");
-		produto.setFabricaco(sdf.parse("30/09/2019 10:30"));
+		produto.setFabricaco(("30/09/2019 10:30"));
 		
 		Produto produto2 = new Produto();
 		produto2.setName("Pedigree");
 		produto2.setPrice(new BigDecimal(45.99));
 		produto2.setEan("037866");
-		produto2.setFabricaco(sdf.parse("30/01/2019 09:30"));
+		produto2.setFabricaco(("30/01/2019 09:30"));
 		
 		Produto produto3 = new Produto();
 		produto3.setName("Alpiste");
 		produto3.setPrice(new BigDecimal(2.99));
 		produto3.setEan("037830");
-		produto3.setFabricaco(sdf.parse("30/01/2019 09:30"));
+		produto3.setFabricaco(("30/01/2019 09:30"));
 		PublicoAlvo publicoAlvo = new PublicoAlvo();
 		publicoAlvo.setName("Gato");
 		

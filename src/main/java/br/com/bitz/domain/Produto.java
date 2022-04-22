@@ -30,7 +30,7 @@ public class Produto  implements Serializable{
 	
 	private String ean;
 	
-	private Date fabricaco;
+	private String fabricaco;
 	
 	@ManyToOne
 	@JoinColumn(name = "publico_id")
@@ -78,11 +78,11 @@ public class Produto  implements Serializable{
 		this.ean = ean;
 	}
 
-	public Date getFabricaco() {
+	public String getFabricaco() {
 		return fabricaco;
 	}
 
-	public void setFabricaco(Date fabricaco) {
+	public void setFabricaco(String fabricaco) {
 		this.fabricaco = fabricaco;
 	}
 }
